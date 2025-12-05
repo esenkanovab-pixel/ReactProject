@@ -1,68 +1,90 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Сброс базовых отступов */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212; /* Темный фон */
+  color: #343434; /* Светлый текст */
+  line-height: 1.6;
+}
+
+/* Ссылкам убираем подчеркивание по умолчанию */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+/* === СТРУКТУРА (чтобы футер был прижат к низу) === */
+.app-wrapper {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  min-height: 100vh; /* Минимальная высота - весь экран */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.main-content {
+  flex: 1; /* Занимает всё свободное место */
+  padding: 40px 20px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* === HEADER === */
+.site-header {
+  background-color: #1f1f1f;
+  border-bottom: 2px solid #333;
+  padding: 20px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f1c40f; /* Золотой цвет */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.site-header nav a {
+  margin-left: 20px;
+  color: #aaa;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.site-header nav a:hover {
+  color: #fff;
+}
+
+/* === FOOTER === */
+.site-footer {
+  background-color: #0a0a0a;
+  padding: 30px 0;
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: auto;
+}
+
+/* === УЛУЧШЕНИЕ КАРТОЧЕК (для List.jsx) === */
+/* Чтобы стили из List.jsx работали лучше, добавим глобальный класс, 
+   если ты захочешь использовать классы вместо inline-стилей позже */
+h1 {
+  margin-bottom: 30px;
+  text-align: center;
+  color: #f1c40f;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
