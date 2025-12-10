@@ -4,8 +4,14 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import './index.css'
 
+import { ShopProvider } from './context/ShopContext'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <App />
+    
+    <ShopProvider>
+      <App />
+    </ShopProvider>
+    
   </BrowserRouter>
 )
